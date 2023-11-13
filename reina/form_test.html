@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <style>
+
+        .invalid-input {
+    border: 2px solid red;
+}
+        #headings {
+            text-align: center;
+        }
+
+
+
+        /* CSS to position the toast container */
+        .toast-container {
+            top: 20px;
+            /* Adjust the top spacing as needed */
+            right: 20px;
+            /* Adjust the right spacing as needed */
+            z-index: 9999;
+            /* Ensure it's on top of other content */
+            pointer-events: none;
+            /* Allow clicks through the toast */
+        }
+
+        /* CSS to make the toast stay on screen */
+        .toast {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 15px;
+            max-width: 300px;
+            /* Adjust the maximum width as needed */
+        }
+    </style>
+     <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <div class="container-fluid">
+
+
+            <div class="col">
+                <!---------------------------------------->
+                <!-- <div class="card card-outline card-warning text-black text-center">
+                    <div class="card-header">
+                        <h3 class="card-title">Latest Members</h3>
+
+                        <div class="card-tools">
+                            <span class="badge badge-danger">8 New Members</span>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div> -->
+                    <!-- /.card-header -->
+                    <!-- <div class="card-body p-0">
+                        <ul class="users-list clearfix">
+                            <li>
+                                <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Alexander Pierce</a>
+                                <span class="users-list-date">Today</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Norman</a>
+                                <span class="users-list-date">Yesterday</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Jane</a>
+                                <span class="users-list-date">12 Jan</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user6-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">John</a>
+                                <span class="users-list-date">12 Jan</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user2-160x160.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Alexander</a>
+                                <span class="users-list-date">13 Jan</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user5-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Sarah</a>
+                                <span class="users-list-date">14 Jan</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user4-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Nora</a>
+                                <span class="users-list-date">15 Jan</span>
+                            </li>
+                            <li>
+                                <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                                <a class="users-list-name" href="#">Nadia</a>
+                                <span class="users-list-date">15 Jan</span>
+                            </li>
+                        </ul> -->
+                        <!-- /.users-list -->
+                    <!-- </div>
+
+                </div> -->
+
+
+                <!-- ----------------------------------- -->
+
+
+
+                <!-- Button trigger modal -->
+
+                <!-- <button id="openmodalbutton" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#myModal">
+                    Go
+                </button> -->
+
+
+
+                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                            <div class="card card-outline card-success">
+                                <div class="card-header ">
+                                    <h4>Registered!</h4>
+
+                                </div>
+                                <div class="card-body">
+                                    Please wait while we create your account.
+
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                </div>
+                            </div>
+                            &nbsp;
+                        </div>
+                    </div>
+                </div> -->
+
+
+
+
+
+                <!-- Button trigger modal -->
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button> -->
+
+                <!-- Modal -->
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+               
+
+
+                <div class="container-fluid">
+                    &nbsp;
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+
+                            <div class="card card-outline card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Please fill the form</h3>
+                                </div>
+                                <form>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">First Name</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                placeholder="Enter first name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Last Name</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                placeholder="Enter last name">
+                                        </div>
+
+                                        
+                                            <div class="form-group">
+                                              <label for="exampleInputEmail1">Email address</label>
+                                              <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            </div>
+                               
+                                        <label for="exampleInputEmail1">Gender</label><br>
+                                        <div class="custom-control custom-radio">
+
+                                            <input class="custom-control-input" type="radio" id="customRadio1"
+                                                name="customRadio">
+                                            <label for="customRadio1" class="custom-control-label">Female</label>
+                                        </div>
+                                        <br>
+                                        <div class="custom-control custom-radio">
+                                            <input class="custom-control-input" type="radio" id="customRadio2"
+                                                name="customRadio">
+                                            <label for="customRadio2" class="custom-control-label">Male</label>
+                                        </div>
+                                        <br>
+                                        <label>Password</label>
+                                        <br>
+                                            <input placeholder="password" class="form-control" name="password" id="password" type="password" />
+                                          
+                                          <br>
+                                          
+                                          <label>Confirm Password</label>
+                                          <br>
+                                            <input placeholder="Re-enter password" class="form-control" type="password" name="confirm_password" id="confirm_password" />
+                                            <span id='message'></span>
+                                            <span id='message2'></span>
+                                          
+                                          <br>
+                                          &nbsp;
+
+                                        <div class="form-group">
+                                            <label>Select Faculty</label>
+                                            <select class="form-control">
+                                                <option>Select Faculty</option>
+                                                <option>Science</option>
+                                                <option>Pharmacy</option>
+                                                <option>Medicine</option>
+                                                <option>Business</option>
+                                                <option>Law</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="customRange1">Range</label>
+                                            <input value="0" min="1" max="100"
+                                                oninput="this.nextElementSibling.value = this.value" type="range"
+                                                class="custom-range" id="customRange1">
+                                            <output>0</output>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-switch">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                <label class="custom-control-label" for="customSwitch1">New Student</label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">File input</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose
+                                                        file</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="customCheckbox1"
+                                                    value="option1">
+                                                <label for="customCheckbox1" class="custom-control-label">Do you want to
+                                                    recieve weekly email?</label>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+
+                                </form>
+
+
+                 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ./wrapper -->
+
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+document.getElementById("myForm").addEventListener("submit", function (event) {
+        // Get all the input elements inside the form
+        const formInputs = this.querySelectorAll("input[required]");
+
+        let isValid = true;
+
+        // Check if any required field is empty
+        formInputs.forEach(function (input) {
+            if (input.value.trim() === "") {
+                isValid = false;
+                input.style.borderColor = "red";
+                input.style.borderWidth = "2px"; // Optional: Set the border width
+            } else {
+                input.style.borderColor = ""; // Reset border color
+                input.style.borderWidth = ""; // Optional: Reset border width
+            }
+        });
+
+        // If any required field is empty, prevent form submission and show an alert
+        if (!isValid) {
+            event.preventDefault();
+            alert("Please fill in all required fields.");
+        }
+    });
+
+
+
+$('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message2').html('Matching').css('color', 'green');
+  } else 
+    $('#message2').html('Not Matching').css('color', 'red');
+});
+
+
+
+$('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+
+
+
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+
+
+        function openmodal() {
+            $('#myModal').modal('show');
+        }
+
+        function closemodalandredirect() {
+            $('#myModal').modal('hide');
+            window.location = "https://iconnect.bau.edu.lb/";
+        }
+
+        $('#openmodalbutton').click(function () {
+            openmodal();
+            setTimeout(closemodalandredirect, 10000);
+
+        });
+
+    </script>
+</body>
+
+</html>
